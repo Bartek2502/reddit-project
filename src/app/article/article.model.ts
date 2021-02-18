@@ -1,23 +1,34 @@
-export class Article
-{
-    votes:number;
-    title:string;
-    link:string;
+export class Article {
+  votes: number;
+  title: string;
+  link: string;
 
-  constructor(title:string, link:string, votes?:number) {
-    this.title=title;
-    this.link=link;
-    this.votes=votes || 10; 
+  constructor(title: string, link: string, votes?: number) {
+    this.title = title;
+    this.link = link;
+    this.votes = votes || 0;
   }
 
-  voteup(){
-    this.votes ++; //add votes
-    
+  voteup() {
+    this.votes++; //add votes
+
 
   }
-  votedown(){
-    this.votes --;
-    
+  votedown() {
+    this.votes--;
 
-  } 
+
+  }
+
+  domain(): string {
+    try{
+      const link: string = this.link.split('//')[1];
+      return link.split('/')[0];
+      
+    }
+    catch(err){
+      return null;
+    }
+
+  }
 }
