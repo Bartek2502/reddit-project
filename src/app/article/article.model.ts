@@ -11,7 +11,7 @@ export class Article
   }
 
   voteup(){
-    this.votes ++;
+    this.votes ++; //add votes
     
 
   }
